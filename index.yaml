@@ -2,6 +2,24 @@ apiVersion: v1
 entries:
   trino:
   - apiVersion: v2
+    appVersion: "467"
+    created: "2024-12-10T15:41:38.713428497Z"
+    description: Fast distributed SQL query engine for big data analytics that helps
+      you explore your data universe
+    digest: d5545057bedc9c439326f1375f1bcce15e0a7fcb3975e0fdbf172e1ea5a2244a
+    home: https://trino.io/
+    icon: https://trino.io/assets/trino.png
+    maintainers:
+    - name: Trino community
+    name: trino
+    sources:
+    - https://github.com/trinodb/charts
+    - https://github.com/trinodb/trino/tree/master/core/docker
+    type: application
+    urls:
+    - https://github.com/DinGo4DEV/trino-charts/releases/download/trino-1.35.0/trino-1.35.0.tgz
+    version: 1.35.0
+  - apiVersion: v2
     appVersion: "432"
     created: "2024-01-15T14:35:49.624533947Z"
     description: Fast distributed SQL query engine for big data analytics that helps
@@ -322,4 +340,22 @@ entries:
     urls:
     - https://github.com/trinodb/charts/releases/download/trino-0.2.0/trino-0.2.0.tgz
     version: 0.2.0
-generated: "2024-01-15T14:35:49.624648481Z"
+  trino-gateway:
+  - apiVersion: v2
+    appVersion: "13"
+    created: "2024-12-10T15:41:38.906598879Z"
+    description: A Helm chart for Trino Gateway
+    digest: 7672d30d1775319eadea2247e653a0c5c34dad5f424c501f599a9b911bc0f477
+    home: https://trinodb.github.io/trino-gateway/
+    icon: https://trino.io/assets/images/logos/trino-gateway-small.png
+    maintainers:
+    - name: Trino community
+    name: trino-gateway
+    sources:
+    - https://github.com/trinodb/charts
+    - https://github.com/trinodb/trino-gateway
+    type: application
+    urls:
+    - https://github.com/DinGo4DEV/trino-charts/releases/download/trino-gateway-1.13.0/trino-gateway-1.13.0.tgz
+    version: 1.13.0
+generated: "2024-12-10T15:41:38.90682912Z"
