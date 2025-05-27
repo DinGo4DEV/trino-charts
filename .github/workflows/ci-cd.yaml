@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     name: test trino ${{ matrix.label }}
     needs: [changes]
-    if: ${{needs.changes.outputs.trino-changed == 'true'}}
+    if: ${{needs.changes.outputs.trino-changed == 'false'}}
     strategy:
       fail-fast: false
       matrix:
@@ -92,7 +92,7 @@ jobs:
     runs-on: ubuntu-latest
     name: test gateway ${{ matrix.label }}
     needs: [changes]
-    if: ${{needs.changes.outputs.gateway-changed == 'true'}}
+    if: ${{needs.changes.outputs.gateway-changed == 'false'}}
     strategy:
       fail-fast: false
       matrix:
@@ -122,6 +122,13 @@ jobs:
           python-version: '3.x'
       - uses: pre-commit/action@v3.0.1
 
+  test-dependencies:
+    needs: [lint, test, test-gateway, docs]
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      # echo
+      - run: echo Hello world!
   # Everything above is CI, everything here and below is for releases and runs only on non-pull-request events
   sync-readme:
     needs: [lint, test, test-gateway, docs]
