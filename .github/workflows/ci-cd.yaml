@@ -133,7 +133,7 @@ jobs:
   test-dependencies-1:
     needs: [test-dependencies]
     runs-on: ubuntu-latest
-    if: ${{ always() && !failure() && github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'pull_request' }}
     steps:
       - run: echo Hello world!
   # Everything above is CI, everything here and below is for releases and runs only on non-pull-request events
