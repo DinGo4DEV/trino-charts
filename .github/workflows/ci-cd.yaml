@@ -129,6 +129,13 @@ jobs:
     steps:
       # echo
       - run: echo Hello world!
+
+  test-dependencies-1:
+    needs: [lint, test, test-gateway, docs, test-dependencies]
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - run: echo Hello world!
   # Everything above is CI, everything here and below is for releases and runs only on non-pull-request events
   sync-readme:
     needs: [lint, test, test-gateway, docs]
