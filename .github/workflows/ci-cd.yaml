@@ -126,7 +126,7 @@ jobs:
   test-dependencies:
     needs: [lint, test, test-gateway, docs]
     runs-on: ubuntu-latest
-    if: ${{ always() && github.event_name == 'pull_request' }}
+    if: ${{ always() && !failure() && github.event_name == 'pull_request' }}
     steps:
       # echo
       - run: echo Hello world!
